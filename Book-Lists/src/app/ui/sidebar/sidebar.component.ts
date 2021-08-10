@@ -11,16 +11,17 @@ export class SidebarComponent implements OnInit {
   //toggleClass: boolean = false;
   @ViewChild('sidenav') sidenav: MatSidenav;
 
-  constructor(private toggle: ToggleService) { }
+  //constructor(private toggle: ToggleService) { }
+  constructor() {}
 
   ngOnInit(): void {
-    if (this.toggle.subsVar == undefined) {
-      /*this.toggle.subsVar = this.toggle.toggleSidebar.subscribe(() => {
+    /*if (this.toggle.subsVar == undefined) {
+      this.toggle.subsVar = this.toggle.toggleSidebar.subscribe(() => {
         this.toggleSidebar();
-      });*/
+      });
       this.toggle.toggleSidebar.call(this.toggleSidebar());
       this.toggle.toggleSidebar.bind(this.toggleSidebar());
-    }
+    }*/
   }
 
   toggleSidebar() {
