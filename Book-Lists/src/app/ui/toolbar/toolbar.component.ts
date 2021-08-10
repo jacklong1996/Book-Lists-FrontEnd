@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { ElementRef, Input } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ToggleService } from 'src/app/service/toggle.service';
+import { SidebarComponent } from '../sidebar/sidebar.component';
 
 @Component({
   selector: 'app-toolbar',
@@ -6,10 +9,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent implements OnInit {
+  isShown: boolean;
 
-  constructor() { }
+  constructor(private sidebarServ: ToggleService) { }
 
   ngOnInit(): void {
+    this.isShown = false;
   }
 
+  openSidenav() {
+    //this.sidebarServ.toggleSidebar();
+    this.sidebarServ.toggleSidebar();
+  }
+
+  openSearch() {
+    //this.search.hidden = !this.search.hidden;
+    /*this.search.nativeElement.setAttribute("hidden", "true");
+    console.log("openSearch");
+    console.log(this.search1.hidden);*/
+    this.isShown = !this.isShown;
+  }
 }
