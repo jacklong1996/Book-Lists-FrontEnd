@@ -14,7 +14,7 @@
 
 
 import { Component } from '@angular/core';
-import * as $ from 'jquery';
+//import * as $ from 'jquery';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -24,10 +24,10 @@ export class AppComponent {
   title = 'angularbootstrap';
    ngOnInit() {
                 //Toggle Click Function
-    $("#menu-toggle").click(function(e) {
+    /*$("#menu-toggle").click(function(e) {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
-    });
+    });*/
   }
   
 }
