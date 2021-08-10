@@ -13,6 +13,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SidebarComponent } from './ui/sidebar/sidebar.component'; 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatFormFieldModule } from '@angular/material/form-field'
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MatCardModule,
     MatProgressSpinnerModule,
     MatSidenavModule,
-    MatDividerModule
+    MatDividerModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

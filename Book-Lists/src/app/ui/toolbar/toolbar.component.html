@@ -1,6 +1,6 @@
 <p>
     <mat-toolbar color="primary">
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="openSidenav()">
         <mat-icon>menu</mat-icon>
       </button>
       <span>My Book Lists</span>
@@ -11,5 +11,16 @@
       <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
         <mat-icon>share</mat-icon>
       </button>-->
+      <span class="search-span">
+        <!--<form class="example-form">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <input matInput type="search" placeholder="Ex. Pizza" value="Sushi">
+          </mat-form-field>
+          </form>-->
+          <input #search *ngIf="isShown" type="text" class="search">
+        <button mat-icon-button class="search-button" aria-label="Open the search bar" (click)="openSearch()">
+          <mat-icon>search</mat-icon>
+        </button>
+      </span>
     </mat-toolbar>
   </p>
