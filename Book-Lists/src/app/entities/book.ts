@@ -1,3 +1,5 @@
+import { stringify } from "@angular/compiler/src/util"
+
 export class Book {
     constructor(
         public id: number, 
@@ -10,4 +12,16 @@ export class Book {
         public date: string, 
         public cover: string
     ) {}
+
+    getGenres(): string {
+        let returnStr = "";
+        for (let i = 0; i < this.genre.length; i++) {
+            if (i+1 == this.genre.length) {
+                returnStr += this.genre[i];
+            } else {
+                returnStr += this.genre[i] + ", ";
+            }
+        }
+        return returnStr;
+    }
 }
