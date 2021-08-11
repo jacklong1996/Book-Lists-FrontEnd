@@ -13,13 +13,18 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SidebarComponent } from './ui/sidebar/sidebar.component'; 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
-import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
+
+import { UserListsComponent } from './ui/user-lists/user-lists.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    UserListsComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,8 @@ import { MatFormFieldModule } from '@angular/material/form-field'
     MatProgressSpinnerModule,
     MatSidenavModule,
     MatDividerModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

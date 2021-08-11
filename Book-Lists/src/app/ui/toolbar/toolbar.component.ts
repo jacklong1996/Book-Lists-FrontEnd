@@ -11,8 +11,8 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 export class ToolbarComponent implements OnInit {
   isShown: boolean;
 
-  //constructor(private sidebarServ: ToggleService) { }
-  constuctor() {}
+  constructor(private sidebarServ: ToggleService) { }
+  //constuctor() {}
 
   ngOnInit(): void {
     this.isShown = false;
@@ -20,7 +20,7 @@ export class ToolbarComponent implements OnInit {
 
   openSidenav() {
     //this.sidebarServ.toggleSidebar();
-    //this.sidebarServ.toggleSidebar();
+    this.sidebarServ.toggleSidebar();
   }
 
   openSearch() {

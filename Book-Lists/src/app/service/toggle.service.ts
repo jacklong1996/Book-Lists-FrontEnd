@@ -1,4 +1,4 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Input, Output } from '@angular/core';
 import { Subscription } from 'rxjs/internal/Subscription';
 
 import { SidebarComponent } from '../ui/sidebar/sidebar.component';
@@ -7,12 +7,13 @@ import { SidebarComponent } from '../ui/sidebar/sidebar.component';
   providedIn: 'root'
 })
 export class ToggleService {
-  toggleEmitter = new EventEmitter();    
+  @Output() toggleEmitter = new EventEmitter();    
   subsVar: Subscription; 
 
   constructor() { }
 
   toggleSidebar() {
+    //console.log("Toggle Service");
     this.toggleEmitter.emit();
   }
 }
