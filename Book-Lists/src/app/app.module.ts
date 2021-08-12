@@ -13,13 +13,20 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SidebarComponent } from './ui/sidebar/sidebar.component'; 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
-import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { SearchComponent } from './components/search/search.component'
+import { RouterModule } from '@angular/router';
+import { BookListComponent } from './components/book-list/book-list.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    SearchComponent,
+ 
   ],
   imports: [
     BrowserModule,
@@ -32,7 +39,11 @@ import { MatFormFieldModule } from '@angular/material/form-field'
     MatProgressSpinnerModule,
     MatSidenavModule,
     MatDividerModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot([
+      { path: 'search/:keyword', component: BookListComponent}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
