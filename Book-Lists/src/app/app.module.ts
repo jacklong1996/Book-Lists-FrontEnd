@@ -18,6 +18,13 @@ import { SearchComponent } from './components/search/search.component'
 import { RouterModule } from '@angular/router';
 import { BookListComponent } from './components/book-list/book-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatMenuModule } from '@angular/material/menu'
+
+
+import { UserListsComponent } from './ui/user-lists/user-lists.component';
+import { AllBooksComponent } from './ui/all-books/all-books.component';
 
 
 @NgModule({
@@ -26,7 +33,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ToolbarComponent,
     SidebarComponent,
     SearchComponent,
- 
+    UserListsComponent,
+    AllBooksComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +52,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     RouterModule.forRoot([
       { path: 'search/:keyword', component: BookListComponent}
     ])
+    DragDropModule,
+    MatTabsModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
