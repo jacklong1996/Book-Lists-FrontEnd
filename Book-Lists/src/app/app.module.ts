@@ -15,16 +15,20 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatMenuModule } from '@angular/material/menu'
 
 
 import { UserListsComponent } from './ui/user-lists/user-lists.component';
+import { AllBooksComponent } from './ui/all-books/all-books.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
     SidebarComponent,
-    UserListsComponent
+    UserListsComponent,
+    AllBooksComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,9 @@ import { UserListsComponent } from './ui/user-lists/user-lists.component';
     MatSidenavModule,
     MatDividerModule,
     MatFormFieldModule,
-    DragDropModule
+    DragDropModule,
+    MatTabsModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

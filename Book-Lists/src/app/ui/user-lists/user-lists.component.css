@@ -11,6 +11,17 @@
   color:rgb(63, 61, 61);
 }
 
+.options {
+  color: black;
+}
+
+.option-button {
+  background-color: white;
+  border: white;
+  width: 30px;
+  height: 30px;
+}
+
 /*.row {
   height: 150px;
 }
@@ -30,7 +41,7 @@
     border: solid 1px #ccc;
     min-height: 60px;
     display: block;
-    background: white;
+    background: lightgray;
     border-radius: 4px;
     overflow: hidden;
     align-content: left;
