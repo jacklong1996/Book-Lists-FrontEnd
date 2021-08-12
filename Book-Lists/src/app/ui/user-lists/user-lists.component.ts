@@ -20,17 +20,20 @@ export class UserListsComponent implements OnInit {
     'Episode IX – The Rise of Skywalker'
   ];
 
-  books: Book[] = [];
+  want: Book[] = [];
+  read: Book[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
-    this.books = [
+    this.want = [
       new Book(1, "Enders Game", "Enders Game", ["Orson Scott Card"], ["Science Fiction", "Fiction"], "Andrew (Ender) Wiggen is taken by the government to be trained as a savior of all mankind",
     300, "Sometime in 1980", "http://books.google.com/books/content?id=Ojqi8KbWuLwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"),
       new Book(2, "Enders Shadow", "Enders Shadow", ["Orson Scott Card"], ["Science Fiction", "Fiction"], "Bean is taken from the streets of Rotterdam to the battleschool",
       310, "1990", 'http://books.google.com/books/content?id=PpEz47zsLEwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api')
     ];
+
+    this.read = this.want;
   }
 
   /*buildBooks() {
@@ -40,8 +43,13 @@ export class UserListsComponent implements OnInit {
   }*/
   
 
-  drop(event: CdkDragDrop<Book[]>) {
-    moveItemInArray(this.books, event.previousIndex, event.currentIndex);
-    console.log(this.books);
+  dropWant(event: CdkDragDrop<Book[]>) {
+    moveItemInArray(this.want, event.previousIndex, event.currentIndex);
+    console.log(this.want);
+  }
+
+  dropRead(event: CdkDragDrop<Book[]>) {
+    moveItemInArray(this.read, event.previousIndex, event.currentIndex);
+    console.log(this.read);
   }
 }
