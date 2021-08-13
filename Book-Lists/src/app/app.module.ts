@@ -20,11 +20,16 @@ import { BookListComponent } from './components/book-list/book-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatTabsModule } from '@angular/material/tabs';
-import { MatMenuModule } from '@angular/material/menu'
+import { MatMenuModule } from '@angular/material/menu';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { UserListsComponent } from './ui/user-lists/user-lists.component';
 import { AllBooksComponent } from './ui/all-books/all-books.component';
+import { LoginComponent } from './security/login/login.component';
+import { SignupComponent } from './security/signup/signup.component';
 
 
 @NgModule({
@@ -34,7 +39,9 @@ import { AllBooksComponent } from './ui/all-books/all-books.component';
     SidebarComponent,
     SearchComponent,
     UserListsComponent,
-    AllBooksComponent
+    AllBooksComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -49,12 +56,12 @@ import { AllBooksComponent } from './ui/all-books/all-books.component';
     MatDividerModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([
-      { path: 'search/:keyword', component: BookListComponent}
-    ])
     DragDropModule,
     MatTabsModule,
-    MatMenuModule
+    MatMenuModule,
+    MatPaginatorModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
