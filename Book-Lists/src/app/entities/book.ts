@@ -24,4 +24,16 @@ export class Book {
         }
         return returnStr;
     }
+
+    getAuthors(): string {
+        let returnStr = "";
+        for (let i = 0; i < this.authors.length; i++) {
+            if (i+1 == this.authors.length) {
+                returnStr += this.authors[i];
+            } else {
+                returnStr += this.authors[i] + ", ";
+            }
+        }
+        return returnStr;
+    }
 }
