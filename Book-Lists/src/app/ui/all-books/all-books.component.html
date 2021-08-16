@@ -2,24 +2,24 @@
     <div class="section-content section-content-p30">
         <div class="container-fluid">
             <div class="row">
-                <mat-card class="example-card book-card" *ngFor="let book of want">
+                <mat-card class="example-card book-card" *ngFor="let tempBook of get">
                     <mat-card-header>
                     <div mat-card-avatar class="example-header-image"></div>
-                    <mat-card-title>{{book.title}}</mat-card-title>
-                    <mat-card-subtitle>{{book.getAuthors()}}</mat-card-subtitle>
+                    <mat-card-title>{{tempBook.title}}</mat-card-title>
+                    <mat-card-subtitle>{{tempBook.getAuthors}}</mat-card-subtitle>
                     </mat-card-header>
 
-                    <img mat-card-image src="{{book.cover}}" alt="Photo of a Shiba Inu" class="cover img-thumbnail">
+                    <img mat-card-image src="{{tempBook.cover}}" alt="Cover image" class="cover img-thumbnail">
 
                     <mat-card-content>
                     <p>
-                        {{book.description}}
+                        {{tempBook.description.substr(0,200)}}
                     </p>
                     </mat-card-content>
 
                     <mat-card-actions>
-                        <button mat-button>LIKE</button>
-                        <button mat-button>SHARE</button>
+                        <button mat-button (click)="addToWant(tempBook.id)">WANT TO READ</button>
+                        <button mat-button (click)="addToRead(tempBook.id)">READ</button>
                     </mat-card-actions>
                 </mat-card>
             </div>

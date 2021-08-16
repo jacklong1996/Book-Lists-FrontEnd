@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+//import { parse } from 'path';
+import { UserListsComponent } from '../ui/user-lists/user-lists.component';
 
 const TOKEN_KEY = 'auth-token';
 const USER_KEY = 'auth-user';
@@ -27,12 +29,23 @@ export class TokenStorageService {
     window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
   }
 
-  public getUser(): any {
+  public getUser(): User {
     const user = window.sessionStorage.getItem(USER_KEY);
-    if (user) {
+    console.log(window.sessionStorage.getItem(USER_KEY));
+    if (user != null) {
+      console.log(JSON.parse(user));
       return JSON.parse(user);
+      console.log("Got it");
     }
 
-    return {};
+    return null;
   }
+}
+
+interface User {
+  username: string;
+  id: number;
+  email: string;
+  name: string;
+  roles: string[];
 }

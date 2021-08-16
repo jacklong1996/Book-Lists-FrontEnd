@@ -13,7 +13,7 @@ export class Book {
         public cover: string
     ) {}
 
-    getGenres(): string {
+    getGenres() {
         let returnStr = "";
         for (let i = 0; i < this.genre.length; i++) {
             if (i+1 == this.genre.length) {
@@ -25,7 +25,7 @@ export class Book {
         return returnStr;
     }
 
-    getAuthors(): string {
+    getAuthors() {
         let returnStr = "";
         for (let i = 0; i < this.authors.length; i++) {
             if (i+1 == this.authors.length) {
@@ -35,5 +35,13 @@ export class Book {
             }
         }
         return returnStr;
+    }
+
+    getDescription() {
+        if (this.description.length < 20) {
+            return this.description.substring(0, this.description.length);
+        } else {
+            return this.description.substring(0, 20);
+        }
     }
 }
