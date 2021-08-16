@@ -1,11 +1,14 @@
-<div class="col-md-12">
+<div fxLayoutAlign="center center" fxFlexFill class="main-div">
+  <mat-card fxFlex="150">
+    <mat-toolbar color="primary">Login Page</mat-toolbar>
+  <div class="col-md-25">
     <div class="card card-container">
       <img
-        id="profile-img"
+        id="profile-img" alt="100x100"
         src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-        class="profile-img-card"
+        class="profile-img-card" style="width: 250px"
       />
-      <form
+      <form fxLayoutAlign="stretch" fxLayout="column"
         *ngIf="!isLoggedIn"
         name="form"
         (ngSubmit)="f.form.valid && onSubmit()"
@@ -13,11 +16,11 @@
         novalidate
       >
         <div class="form-group">
-          <label for="username">Username</label>
-          <input
-            type="text"
-            class="form-control"
-            name="username"
+          
+          
+          <input 
+          class="form-control"
+            placeholder="username"
             [(ngModel)]="form.username"
             required
             #username="ngModel"
@@ -27,15 +30,15 @@
             role="alert"
             *ngIf="username.errors && f.submitted"
           >
-            Username is required!
+            username is required!
           </div>
         </div>
         <div class="form-group">
-          <label for="password">Password</label>
+          
           <input
             type="password"
             class="form-control"
-            name="password"
+            placeholder="password"
             [(ngModel)]="form.password"
             required
             minlength="6"
@@ -46,7 +49,7 @@
             role="alert"
             *ngIf="password.errors && f.submitted"
           >
-            <div *ngIf="password.errors.required">Password is required</div>
+            <div *ngIf="password.errors.required">password is required</div>
             <div *ngIf="password.errors.minlength">
               Password must be at least 6 characters
             </div>
@@ -73,3 +76,5 @@
       </div>
     </div>
   </div>
+</mat-card>
+</div>

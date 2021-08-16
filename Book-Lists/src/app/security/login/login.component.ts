@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/service/auth.service';
 import { TokenStorageService } from 'src/app/service/token-storage.service';
-
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -9,6 +9,7 @@ import { TokenStorageService } from 'src/app/service/token-storage.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  loginForm : FormGroup;
   form: any = {
     username: null,
     password: null
