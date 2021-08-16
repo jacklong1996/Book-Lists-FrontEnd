@@ -36,14 +36,14 @@
                             <h1 class="title"><b>{{tempBook.title}}</b></h1>
                         </div>
                         <div class="listing-title">
-                            <h2 class="author">By: {{tempBook.authors[0]}}</h2>
+                            <h2 class="author">By: {{tempBook.getAuthors}}</h2>
                         </div>
                         <div class="d-flex flex-row align-items-center">
                             
                         </div>
                         <div class="description">
                             <!--Replace this with a function in the book class which will limit the number of characters being sent here.-->
-                            <p class="description-text">{{tempBook.description}}</p>
+                            <p class="description-text">{{tempBook.description.substr(0,200)}}</p>
                         </div>
                         
                     </div>
@@ -52,7 +52,7 @@
                             <div class="genre">
                                 <!--Replace this with a function in the book class which will avoid the comma on the last element.-->
                                 <!--<div class="genres">Genres: <div class="genrelist" *ngFor="let tempGenre of tempBook.genre">{{tempGenre}}, </div></div>-->
-                                <div class="genres">Genres: {{tempBook.getGenres()}}</div>
+                                <div class="genres">Genres: {{tempBook.getGenres}}</div>
                             </div>
                             <div class="date">
                                 <p class="date-item">{{tempBook.date}}</p>
@@ -93,14 +93,14 @@
                                 <h1 class="title"><b>{{tempBook.title}}</b></h1>
                             </div>
                             <div class="listing-title">
-                                <h2 class="author">By: {{tempBook.authors[0]}}</h2>
+                                <h2 class="author">By: {{tempBook.authors}}</h2>
                             </div>
                             <div class="d-flex flex-row align-items-center">
                                 
                             </div>
                             <div class="description">
                                 <!--Replace this with a function in the book class which will limit the number of characters being sent here.-->
-                                <p class="description-text">{{tempBook.description}}</p>
+                                <p class="description-text">{{tempBook.description.substr(0,200)}}</p>
                             </div>
                             
                         </div>
@@ -109,7 +109,7 @@
                                 <div class="genre">
                                     <!--Replace this with a function in the book class which will avoid the comma on the last element.-->
                                     <!--<div class="genres">Genres: <div class="genrelist" *ngFor="let tempGenre of tempBook.genre">{{tempGenre}}, </div></div>-->
-                                    <div class="genres">Genres: {{tempBook.getGenres()}}</div>
+                                    <div class="genres">Genres: {{tempBook.getGenres}}</div>
                                 </div>
                                 <div class="date">
                                     <p class="date-item">{{tempBook.date}}</p>

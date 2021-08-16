@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TokenStorageService } from './service/token-storage.service';
 //import { TokenStorageService } from './_services/token-storage.service';
 
@@ -10,12 +11,13 @@ import { TokenStorageService } from './service/token-storage.service';
 export class AppComponent implements OnInit {
   title = 'angularbootstrap';
   private roles: string[] = [];
+  routeURL: string;
   isLoggedIn = false;
-  showAdminBoard = false;
-  showModeratorBoard = false;
   username?: string;
 
-  constructor(private tokenStorageService: TokenStorageService) { }
+  constructor(private tokenStorageService: TokenStorageService, private router: Router) { 
+    this.routeURL = router.url;
+  }
 
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
@@ -24,9 +26,6 @@ export class AppComponent implements OnInit {
       const user = this.tokenStorageService.getUser();
       this.roles = user.roles;
 
-      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
-      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
-
       this.username = user.username;
     }
   }
@@ -34,5 +33,20 @@ export class AppComponent implements OnInit {
   logout(): void {
     this.tokenStorageService.signOut();
     window.location.reload();
+  }
+
+  canActivate(): boolean {
+    if (this.isLoggedIn) {
+     return true;
+    } else {
+      this.routeURL = '/login';
+      /*this.router.navigate(['/login'], {
+        queryParams: {
+          return: 'login'
+        }
+      });*/
+      this.router.navigate(['/login'])
+     return false;
+    }
   }
 }

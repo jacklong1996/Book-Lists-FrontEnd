@@ -14,9 +14,7 @@ import { SidebarComponent } from './ui/sidebar/sidebar.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { SearchComponent } from './components/search/search.component'
 import { RouterModule } from '@angular/router';
-import { BookListComponent } from './components/book-list/book-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -30,6 +28,7 @@ import { UserListsComponent } from './ui/user-lists/user-lists.component';
 import { AllBooksComponent } from './ui/all-books/all-books.component';
 import { LoginComponent } from './security/login/login.component';
 import { SignupComponent } from './security/signup/signup.component';
+import { SearchComponent } from './ui/search/search.component';
 
 
 @NgModule({
@@ -61,6 +60,8 @@ import { SignupComponent } from './security/signup/signup.component';
     MatMenuModule,
     MatPaginatorModule,
     FormsModule,
+    HttpClientModule,
+    RouterModule,
     HttpClientModule
   ],
   providers: [],
