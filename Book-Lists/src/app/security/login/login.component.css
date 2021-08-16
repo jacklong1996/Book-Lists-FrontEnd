@@ -1,0 +1,41 @@
+mat-card{
+    max-width: 600px;
+    margin: 2em auto;
+    text-align: center;
+    max-height: 600px;
+}
+
+.header{
+    text-align: center;
+}
+
+.full-width{
+    width: 80%;
+}
+.forgot-password{
+    padding-left: 0px;
+}
+
+.email-input{
+    padding-top: 10px;
+}
+
+.aLink{
+    float: right;
+    padding-right: 60px;
+    text-decoration: none;
+}
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: green !important;
+   }
+  
+   ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: green !important;
+  } 
+  
+  ::ng-deep.mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: green !important;;
+  }

@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/service/auth.service';
 //import { AuthService } from '../_services/auth.service';
+import { ViewEncapsulation} from '@angular/core';
+
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  styleUrls: ['./signup.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class SignupComponent implements OnInit {
   form: any = {

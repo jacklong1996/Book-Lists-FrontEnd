@@ -30,13 +30,7 @@
                     <div class="col-md-6"></div>
                     <div class="col-md-3">
                         <div class="items">
-                            <!--<label>Item per page</label> 
-                            <select (change)='updatePageSize($event.target)'>
-                                <option selected="true">10</option>
-                                <option>20</option>
-                                <option>30</option>
-                                <option>40</option>
-                            </select>-->
+                              
                             <mat-paginator [length]="100"
                                 [pageSize]="10"
                                 [pageSizeOptions]="[5, 10, 25, 100]"
@@ -45,16 +39,9 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <!--<div class="number">1 - 10 of 100</div>-->
-                        <!--<ngb-pagination [(page)]='thePageNumber' [pageSize]='thePageSize' [collectionSize]='theTotalElements' (pageChange)='handleListBooks()'></ngb-pagination>-->
-                        
+                           
                     </div>
-                    <!--<div class="col-md-1">
-                        <div class="arrows">
-                            <a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                        </div>
-                    </div>-->
+                 
                 </div>
             </div>
         </div>

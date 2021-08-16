@@ -1,6 +1,6 @@
 export class Book {
-    BOOK_ID:number;
-    TITTLE:string;
+    id:number;
+    title:string;
     SERIES:string;
     AUTHOR:string;
     GENRE:string;
